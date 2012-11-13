@@ -23,9 +23,10 @@ cp kernel.img $CYANOGENMOD/device/rockchip/rk2918/kernel
 cp kernel.img installer/kernel.img
 
 #zip package
-
-zip -r vurrutKER_CWM_$(date +%Y%m%d).zip installer/.
-mv vurrutKER_CWM_$(date +%Y%m%d).zip ../
+cd installer
+zip -r vurrutKER_CWM_$(date +%Y%m%d).zip .
+mv vurrutKER_CWM_$(date +%Y%m%d).zip ~
+cd ..
 
 # Make mrproper
 make mrproper
