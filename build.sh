@@ -1,5 +1,7 @@
 #!/bin/bash -x
 CYANOGENMOD=../../..
+# Starting Timer
+START=$(date +%s)
 
 # Make mrproper
 make mrproper
@@ -13,12 +15,19 @@ nice -n 10 make -j16 modules
 
 # Copy modules
 find -name '*.ko' -exec cp -av {} $CYANOGENMOD/device/rockchip/rk2918/modules/ \;
-
+find -name '*.ko' -exec cp -av {} installer/system/lib/modules/ \;
 # Build kernel
 nice -n 10 make -j16 kernel.img
 # Copy kernel
 cp kernel.img $CYANOGENMOD/device/rockchip/rk2918/kernel
+cp kernel.img installer/kernel.img
+
+#zip package
+
+zip -r vurrutKER_CWM_$(date +%Y%m%d).zip installer/.
+mv vurrutKER_CWM_$(date +%Y%m%d).zip ../
 
 # Make mrproper
 make mrproper
+rm kernel.img
 
