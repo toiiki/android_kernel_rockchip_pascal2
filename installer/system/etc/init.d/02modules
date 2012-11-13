@@ -1,0 +1,8 @@
+#!/system/bin/sh
+#
+
+
+insmod /system/lib/modules/galcore.ko
+insmod /system/lib/modules/rk29-ipp.ko
+
+

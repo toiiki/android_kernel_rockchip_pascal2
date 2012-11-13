@@ -1,0 +1,22 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: 50MJCZERSXVt5LIYl0LgPi85UTA=
+
+Name: system/lib/modules/rk29-ipp.ko
+SHA1-Digest: ZX9d+OFTDdc/mJj1Qyr/1CTwGFg=
+
+Name: boot.img
+SHA1-Digest: T6mQ+NSYj8ekTKrYjYx8y7YR6hs=
+
+Name: system/lib/modules/galcore.ko
+SHA1-Digest: ULGjG5J7wn+7KIOQvvCaxsqv/OI=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: 0gLm/8LpeLgHBQ6FIf42DoD7DDU=
+
+Name: system/lib/modules/wlan.ko
+SHA1-Digest: 4ls5Txsacbpro524wbdPC2L0kP4=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: TDabXkTWpZy7IeCZIrQhemrmVhQ=
+

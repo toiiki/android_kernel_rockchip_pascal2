@@ -1,0 +1,17 @@
+ui_print(">>");
+ui_print(">> vurrutKER Bootimage Updater");
+ui_print(">> for Rockchip 2918");
+ui_print(">>");
+
+show_progress(0.200000, 2);
+run_program("/sbin/busybox", "mount", "/system");
+show_progress(0.500000, 10);
+package_extract_dir("system", "/system");
+set_perm_recursive(0, 0, 0766, 0766, "/system/lib/modules");
+set_perm_recursive(0, 0, 0766, 0766, "/system/etc/init.d");
+show_progress(0.300000, 0);
+assert(package_extract_file("kernel.img", "/tmp/kernel.img"),
+       run_program("/sbin/nandwrite","-p", "/dev/mtd/mtd2","/tmp/kernel.img"),
+       delete("/tmp/kernel.img"));
+unmount("/system");
+ui_print("Done.");
