@@ -3066,9 +3066,14 @@ static struct cpufreq_frequency_table freq_table[] =
 	CPU_FREQ_TABLE;
 #else
 {
-	{ .index = 1175000, .frequency =  408000 },
-	{ .index = 1175000, .frequency =  816000 },
-	{ .index = 1275000, .frequency = 1008000 },
+	{ .index = 1200000, .frequency =  300000 },
+	{ .index = 1200000, .frequency =  408000 },
+	{ .index = 1200000, .frequency =  600000 },
+	{ .index = 1200000, .frequency =  816000 }, 
+	{ .index = 1250000, .frequency = 1008000 },
+	{ .index = 1300000, .frequency = 1104000 },
+	{ .index = 1400000, .frequency = 1176000 },
+	{ .index = 1400000, .frequency = 1200000 },
 	{ .frequency = CPUFREQ_TABLE_END },
 };
 #endif

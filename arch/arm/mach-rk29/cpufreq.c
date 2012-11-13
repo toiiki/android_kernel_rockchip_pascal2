@@ -33,14 +33,14 @@ static int no_cpufreq_access;
 static struct cpufreq_frequency_table default_freq_table[] = {
 //	{ .index = 1100000, .frequency =   24000 },
 //	{ .index = 1200000, .frequency =  204000 },
-//	{ .index = 1200000, .frequency =  300000 },
+	{ .index = 1200000, .frequency =  300000 },
 	{ .index = 1200000, .frequency =  408000 },
-//	{ .index = 1200000, .frequency =  600000 },
-	{ .index = 1200000, .frequency =  816000 }, /* must enable, see SLEEP_FREQ above */
-//	{ .index = 1250000, .frequency = 1008000 },
-//	{ .index = 1300000, .frequency = 1104000 },
-//	{ .index = 1400000, .frequency = 1176000 },
-//	{ .index = 1400000, .frequency = 1200000 },
+	{ .index = 1200000, .frequency =  600000 },
+	{ .index = 1200000, .frequency =  816000 }, 
+	{ .index = 1250000, .frequency = 1008000 },
+	{ .index = 1300000, .frequency = 1104000 },
+	{ .index = 1400000, .frequency = 1176000 },
+	{ .index = 1400000, .frequency = 1200000 },
 	{ .frequency = CPUFREQ_TABLE_END },
 };
 static struct cpufreq_frequency_table *freq_table = default_freq_table;
@@ -625,7 +625,7 @@ static int rk29_cpufreq_init(struct cpufreq_policy *policy)
 		queue_delayed_work(wq, &rk29_cpufreq_limit_by_temp_work, WORK_DELAY);
 	}
 	cpufreq_register_notifier(&notifier_policy_block, CPUFREQ_POLICY_NOTIFIER);
-	if (limit_max_freq > 1008000) {
+	if (limit_max_freq > 1200000) {
 		clk_gpu = clk_get(NULL, "gpu");
 		clk_vpu = clk_get(NULL, "vpu");
 		clk_notifier_register(clk_gpu, &rk29_cpufreq_gpu_notifier);
